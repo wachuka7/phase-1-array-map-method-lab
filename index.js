@@ -14,3 +14,27 @@ const tutorials = [
 const titleCased = () => {
   return tutorials
 }
+
+
+//a function to capitalize the first letter which is index 0
+//after capitalizing the letter it adds the remaing letters from ndex one to the end.
+function upperCase(word){
+  return word.charAt(0).toUpperCase()+ word.slice(1);
+  };
+
+//a function that capitalizes each letter
+//this function takes tutorial as its argument
+function titleCasingOne(tutorial){
+  return tutorial
+  //first split the array or sentence into words so as to iterate every word.
+    .split(' ')
+    //capitalize
+    .map(upperCase)
+    //after capitalizing the words are now joined to form one array or a sentence
+    .join(' ');
+}
+//use the titleCasingOne function to titlecase the other arrays or sentences of the Object.
+function titleCasingAll(tutorials){
+  return tutorials.map(titleCasingOne);
+}
+const titleCasedArray=titleCasingAll(tutorials);
